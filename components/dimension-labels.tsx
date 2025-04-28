@@ -531,12 +531,12 @@ export function OrthographicViews({
           hiddenLineColor={viewColors.hiddenLine}
         />
 
-        {/* Columns (vertical dividers) */}
+        {/* Columns (vertical dividers) - now extending all the way from top to bottom */}
         {columnPositions.map((x, i) => (
           <LineWithThickness
             key={`top-column-${i}`}
-            start={[x, -halfDepth + thickness, 0]}
-            end={[x, halfDepth - thickness, 0]}
+            start={[x, -halfDepth, 0]}
+            end={[x, halfDepth, 0]}
             thickness={thickness}
             color={viewColors.outline}
           />
@@ -604,12 +604,12 @@ export function OrthographicViews({
           />
         ))}
 
-        {/* Columns (vertical dividers) with thickness */}
+        {/* Columns (vertical dividers) with thickness - now extending all the way from top to bottom */}
         {columnPositions.map((x, i) => (
           <LineWithThickness
             key={`front-column-${i}`}
-            start={[x, -halfHeight + thickness, 0]}
-            end={[x, halfHeight - thickness, 0]}
+            start={[x, -halfHeight, 0]}
+            end={[x, halfHeight, 0]}
             thickness={thickness}
             color={viewColors.outline}
           />

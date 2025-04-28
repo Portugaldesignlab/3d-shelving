@@ -303,7 +303,7 @@ function ColumnWithDivisions({
 
   return (
     <group position={position}>
-      {/* Main column */}
+      {/* Main column - FIXED: Using full height instead of height - thickness*2 */}
       <mesh ref={columnRef} material={MATERIALS[material]} castShadow receiveShadow name="column">
         <boxGeometry args={[thickness, height, depth]} />
         {showWireframe && <meshBasicMaterial wireframe color="white" transparent opacity={0.3} />}
@@ -373,9 +373,9 @@ function ShelvingUnitModel({
       <ColumnWithDivisions
         key={column.id}
         width={width}
-        height={height - thickness * 2}
+        height={height} // FIXED: Using full height instead of height - thickness*2
         depth={depth - thickness * 2}
-        position={[xPosition, 0, 0]}
+        position={[xPosition, 0, 0]} // FIXED: Centered vertically
         divisions={column.divisions}
         material={material}
         showWireframe={showWireframe}
